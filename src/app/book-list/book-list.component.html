@@ -1,0 +1,23 @@
+<div class="row d-flex  justify-content-center">
+  <div class="col-12 col-md-8">
+      <h2>Vos livres</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let book of books; let i = index " (click)="onViewBook(i)" >
+        <div class="">
+          <div class="d-flex flex-row align-items-center">
+            <img src="" style=" height:100px; max-width: 100%;" alt="" *ngIf="book.photo" [src]="book.photo" />
+            <div class="d-flex flex-column ml-4">
+              <h3 class=""> {{ book.title }}</h3>
+              <p class="text-muted"> {{ book.author }}</p>
+            </div>
+            <button class="btn btn-danger btn-sm ml-auto" (click)="onDeleteBook(books)">
+              <span class="fa fa-minus"></span> supprimer
+            </button>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+    <button class="btn btn-primary btn-sm mt-4" (click)="onNewBook()"> Nouveau livre </button>
+  </div>
+</div>
